@@ -2,3 +2,8 @@ REPORT_*.md
 node_modules/
 .next/
 dist/
+
+# `zymdur agente --repo` escribe la ficha del agente relativa al repo, no al workspace:
+# crea este arbol falso en vez de registrarla en el brain real. Defecto de la herramienta,
+# no del prototipo — se ignora aqui para no ensuciar el repo del cliente.
+zymbiotek-brain/
