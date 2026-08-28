@@ -1,0 +1,4 @@
+REPORT_*.md
+node_modules/
+.next/
+dist/
