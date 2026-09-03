@@ -1,22 +1,30 @@
 /* ============================================================
    Yarasca & Asociados — hoja de estilos del prototipo
-   Paleta: fondo #0A0D14 · acento Blue Ice #00C3E3
-   Sin fuentes externas: pilas de sistema (serif para titulares,
-   sans limpia para texto) para mantener autoridad sin CDN.
+   Rediseño 3-sep: paleta propia del cliente (charcoal + oro), NO la de
+   Zymbiotek. La versión anterior usaba el Blue Ice #00C3E3 — el acento
+   de MARCA de Zymbiotek — como si fuera la identidad de Yarasca. Un
+   sitio de cliente no lleva puesto el color de la agencia que lo hizo.
+   Referencia estructural: goldmanwolfe.com (hero fotográfico de
+   autoridad, tipografía serif de peso, grilla de servicios sobre
+   fondo claro, paleta oro/carbón/crema). Estructura y contenido del
+   prototipo NO cambian — los [PENDIENTE] siguen siendo honestos:
+   datos reales del cliente que no se inventan.
    ============================================================ */
 
 :root {
-  --bg: #0A0D14;
-  --bg-raise: #10141f;
-  --bg-card: #0e1220;
-  --ink: #E8ECF3;
-  --ink-dim: #9AA4B5;
-  --accent: #00C3E3;
-  --accent-dark: #0097b0;
-  --line: rgba(154, 164, 181, 0.18);
-  --serif: "Georgia", "Times New Roman", "Palatino Linotype", serif;
-  --sans: "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
-  --radius: 6px;
+  --bg: #17130D;
+  --bg-raise: #1E1912;
+  --bg-card: #1C170F;
+  --ink: #F3EEE4;
+  --ink-dim: #B7AB97;
+  --accent: #C9A15A;
+  --accent-bright: #E4BE7C;
+  --accent-dark: #8F7038;
+  --accent-on: #1A1408;
+  --line: rgba(201, 161, 90, 0.22);
+  --serif: "Playfair Display", "Georgia", "Times New Roman", serif;
+  --sans: "Inter", "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --radius: 4px;
   --maxw: 1140px;
 }
 
@@ -43,13 +51,12 @@ h1, h2, h3 {
   font-family: var(--serif);
   font-weight: 600;
   line-height: 1.15;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.005em;
 }
 
-a { color: var(--accent); text-decoration: none; }
+a { color: var(--accent-bright); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* Anclas bajo la cabecera fija */
 section[id] { scroll-margin-top: 84px; }
 
 /* ---------- Botones ---------- */
@@ -58,35 +65,36 @@ section[id] { scroll-margin-top: 84px; }
   padding: 14px 30px;
   border-radius: var(--radius);
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   cursor: pointer;
   border: 1px solid transparent;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   text-align: center;
 }
 .btn:hover { text-decoration: none; }
-.btn-primary { background: var(--accent); color: #06131a; }
-.btn-primary:hover { background: #33d3ec; }
+.btn-primary { background: var(--accent); color: var(--accent-on); }
+.btn-primary:hover { background: var(--accent-bright); }
 .btn-ghost { border-color: var(--line); color: var(--ink); }
-.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent-bright); }
 .btn-block { display: block; width: 100%; }
 .btn-whatsapp {
   background: transparent;
   border: 1px solid var(--accent);
-  color: var(--accent);
+  color: var(--accent-bright);
   display: block;
 }
-.btn-whatsapp:hover { background: rgba(0, 195, 227, 0.08); }
-.btn-whatsapp small { font-weight: 400; font-size: 12px; opacity: 0.8; }
+.btn-whatsapp:hover { background: rgba(201, 161, 90, 0.08); }
+.btn-whatsapp small { font-weight: 400; font-size: 12px; letter-spacing: normal; text-transform: none; opacity: 0.75; }
 
 /* ---------- Cabecera ---------- */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(10, 13, 20, 0.92);
+  background: rgba(23, 19, 13, 0.94);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
@@ -94,7 +102,7 @@ section[id] { scroll-margin-top: 84px; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 76px;
   gap: 24px;
 }
 .brand { display: flex; align-items: center; gap: 12px; color: var(--ink); flex-shrink: 0; }
@@ -106,7 +114,7 @@ section[id] { scroll-margin-top: 84px; }
   width: 42px; height: 42px;
   border: 1px solid var(--accent);
   border-radius: var(--radius);
-  color: var(--accent);
+  color: var(--accent-bright);
   font-family: var(--serif);
   font-weight: 700;
   font-size: 15px;
@@ -114,37 +122,37 @@ section[id] { scroll-margin-top: 84px; }
 }
 .brand-text {
   font-family: var(--serif);
-  font-size: 18px;
-  letter-spacing: 0.02em;
+  font-size: 19px;
+  letter-spacing: 0.01em;
   line-height: 1.1;
   display: flex;
   flex-direction: column;
   white-space: nowrap;
   min-width: max-content;
 }
-.brand-text em { color: var(--accent); font-style: normal; }
+.brand-text em { color: var(--accent-bright); font-style: normal; }
 .brand-sub {
   font-family: var(--sans);
-  font-size: 11px;
-  letter-spacing: 0.28em;
+  font-size: 10px;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--ink-dim);
 }
 .main-nav { display: flex; align-items: center; gap: 28px; }
 .main-nav a {
   color: var(--ink-dim);
-  font-size: 14px;
-  letter-spacing: 0.06em;
+  font-size: 13px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-.main-nav a:hover { color: var(--accent); text-decoration: none; }
+.main-nav a:hover { color: var(--accent-bright); text-decoration: none; }
 .main-nav .nav-cta {
-  color: var(--accent);
+  color: var(--accent-bright);
   border: 1px solid var(--accent);
   padding: 9px 18px;
   border-radius: var(--radius);
 }
-.main-nav .nav-cta:hover { background: rgba(0, 195, 227, 0.1); }
+.main-nav .nav-cta:hover { background: rgba(201, 161, 90, 0.1); }
 
 .nav-toggle {
   display: none;
@@ -165,27 +173,55 @@ section[id] { scroll-margin-top: 84px; }
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero ----------
+   goldmanwolfe.com usa una fotografía real de sala de juntas con overlay
+   oscuro. Sin foto real todavía (punto 2 del encargo: placeholder listo
+   para sustituir, nunca una imagen inventada) — se construye la MISMA
+   profundidad con capas CSS: textura geométrica sutil + viñeta, para que
+   sustituir esto por `background-image: url(...)` más adelante sea un
+   cambio de una línea, no una reconstrucción del hero. */
 .hero {
   position: relative;
-  padding: 120px 0 90px;
-  background:
-    radial-gradient(ellipse 60% 50% at 75% 15%, rgba(0, 195, 227, 0.10), transparent 70%),
-    radial-gradient(ellipse 50% 40% at 15% 85%, rgba(0, 195, 227, 0.05), transparent 70%),
-    var(--bg);
+  padding: 140px 0 100px;
+  overflow: hidden;
   border-bottom: 1px solid var(--line);
+  background: var(--bg);
 }
-.hero-inner { max-width: 820px; }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(160deg, rgba(23,19,13,0.55) 0%, rgba(23,19,13,0.88) 55%, var(--bg) 100%),
+    repeating-linear-gradient(115deg, rgba(201,161,90,0.05) 0 2px, transparent 2px 64px),
+    radial-gradient(ellipse 70% 60% at 80% 0%, rgba(201,161,90,0.14), transparent 65%);
+  pointer-events: none;
+}
+.hero-placeholder-tag {
+  position: absolute;
+  top: 18px; right: 18px;
+  z-index: 1;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 5px 10px;
+  background: rgba(23,19,13,0.6);
+}
+.hero-inner { position: relative; z-index: 1; max-width: 820px; }
 .hero-kicker {
   text-transform: uppercase;
   letter-spacing: 0.32em;
-  font-size: 13px;
-  color: var(--accent);
-  margin-bottom: 20px;
+  font-size: 12px;
+  color: var(--accent-bright);
+  margin-bottom: 22px;
 }
 .hero h1 {
-  font-size: clamp(38px, 6vw, 64px);
-  margin-bottom: 24px;
+  font-size: clamp(38px, 6vw, 62px);
+  margin-bottom: 26px;
+  text-transform: uppercase;
 }
 .hero-lede {
   font-size: 19px;
@@ -202,7 +238,6 @@ section[id] { scroll-margin-top: 84px; }
   border-top: 1px solid var(--line);
   padding-top: 28px;
 }
-/* Si no caben en una línea, apilar sin separadores huérfanos */
 @media (max-width: 820px) {
   .hero-trust { flex-direction: column; align-items: flex-start; gap: 10px; }
   .hero-trust li:not(:first-child)::before { display: none; }
@@ -231,10 +266,10 @@ section[id] { scroll-margin-top: 84px; }
   text-transform: uppercase;
   letter-spacing: 0.3em;
   font-size: 12px;
-  color: var(--accent);
+  color: var(--accent-bright);
   margin-bottom: 14px;
 }
-.section-head h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 16px; }
+.section-head h2 { font-size: clamp(28px, 4vw, 38px); margin-bottom: 16px; }
 .section-sub { color: var(--ink-dim); font-size: 17px; }
 
 /* ---------- Áreas de práctica ---------- */
@@ -247,6 +282,7 @@ section[id] { scroll-margin-top: 84px; }
 .area-card {
   background: var(--bg-card);
   border: 1px solid var(--line);
+  border-top: 2px solid var(--accent);
   border-radius: var(--radius);
   padding: 36px 28px;
   display: flex;
@@ -262,11 +298,11 @@ section[id] { scroll-margin-top: 84px; }
   font-family: var(--serif);
   font-size: 14px;
   letter-spacing: 0.2em;
-  color: var(--accent);
+  color: var(--accent-bright);
 }
-.area-card h3 { font-size: 20px; min-height: 3.2em; }
+.area-card h3 { font-size: 20px; min-height: 3.2em; text-transform: none; }
 .area-card p { color: var(--ink-dim); font-size: 15px; flex-grow: 1; }
-.area-link { font-size: 14px; font-weight: 600; letter-spacing: 0.02em; }
+.area-link { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
 
 /* ---------- Perfil del titular ---------- */
 .profile-grid {
@@ -278,7 +314,10 @@ section[id] { scroll-margin-top: 84px; }
 .photo-placeholder {
   aspect-ratio: 3 / 4;
   width: 100%;
-  background: linear-gradient(160deg, var(--bg-card), var(--bg-raise));
+  background:
+    linear-gradient(160deg, rgba(201,161,90,0.14), transparent 60%),
+    repeating-linear-gradient(45deg, rgba(201,161,90,0.05) 0 2px, transparent 2px 48px),
+    var(--bg-card);
   border: 1px dashed var(--accent-dark);
   border-radius: var(--radius);
   display: flex;
@@ -287,7 +326,7 @@ section[id] { scroll-margin-top: 84px; }
   text-align: center;
   padding: 24px;
   color: var(--ink-dim);
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 0.05em;
 }
 .profile-body p { color: var(--ink-dim); margin-bottom: 18px; }
@@ -304,10 +343,10 @@ section[id] { scroll-margin-top: 84px; }
   font-size: 15px;
 }
 .cred-label {
-  color: var(--accent);
-  font-size: 13px;
+  color: var(--accent-bright);
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   margin-right: 10px;
 }
 
@@ -331,9 +370,9 @@ section[id] { scroll-margin-top: 84px; }
 .field { display: flex; flex-direction: column; gap: 8px; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .field label {
-  font-size: 13px;
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--ink-dim);
 }
 .field input,
@@ -352,12 +391,12 @@ section[id] { scroll-margin-top: 84px; }
 .field textarea:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(0, 195, 227, 0.15);
+  box-shadow: 0 0 0 3px rgba(201, 161, 90, 0.18);
 }
 .field textarea { resize: vertical; }
 .form-note { font-size: 13px; color: var(--ink-dim); text-align: center; }
-.form-note.ok { color: var(--accent); }
-.form-note.err { color: #ff7a7a; }
+.form-note.ok { color: var(--accent-bright); }
+.form-note.err { color: #e08a6b; }
 
 .contact-side { display: flex; flex-direction: column; gap: 24px; }
 .side-block {
@@ -381,6 +420,7 @@ section[id] { scroll-margin-top: 84px; }
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 48px 0;
+  background: var(--bg-raise);
 }
 .footer-wrap {
   display: flex;
@@ -394,11 +434,11 @@ section[id] { scroll-margin-top: 84px; }
 .footer-nav { display: flex; gap: 24px; }
 .footer-nav a {
   color: var(--ink-dim);
-  font-size: 13px;
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
 }
-.footer-nav a:hover { color: var(--accent); }
+.footer-nav a:hover { color: var(--accent-bright); }
 .footer-legal { width: 100%; color: var(--ink-dim); font-size: 13px; }
 
 /* ---------- Animación de aparición ---------- */
@@ -426,7 +466,7 @@ section[id] { scroll-margin-top: 84px; }
   .nav-toggle { display: flex; }
   .main-nav {
     position: absolute;
-    top: 72px;
+    top: 76px;
     left: 0;
     right: 0;
     flex-direction: column;
