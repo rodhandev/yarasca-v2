@@ -33,12 +33,22 @@
 html { scroll-behavior: smooth; }
 
 body {
+  position: relative;
   background: var(--bg);
   color: var(--ink);
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+}
+/* Grano sutil sobre todo el sitio — la diferencia entre "charcoal plano" y "charcoal con
+   textura" es esto: casi imperceptible por separado, se nota en conjunto. Un solo SVG de
+   ruido, sin red, sin librería. */
+body::before {
+  content: "";
+  position: fixed; inset: 0; z-index: 999; pointer-events: none;
+  opacity: 0.035; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .container {
@@ -75,10 +85,24 @@ section[id] { scroll-margin-top: 84px; }
   text-align: center;
 }
 .btn:hover { text-decoration: none; }
-.btn-primary { background: var(--accent); color: var(--accent-on); }
-.btn-primary:hover { background: var(--accent-bright); }
-.btn-ghost { border-color: var(--line); color: var(--ink); }
-.btn-ghost:hover { border-color: var(--accent); color: var(--accent-bright); }
+.btn-primary {
+  background: var(--accent); color: var(--accent-on);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-primary:hover {
+  background: var(--accent-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(201,161,90,0.28);
+}
+.btn-ghost {
+  border-color: var(--line); color: var(--ink);
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--accent); color: var(--accent-bright);
+  background: rgba(201,161,90,0.06);
+  transform: translateY(-2px);
+}
 .btn-block { display: block; width: 100%; }
 .btn-whatsapp {
   background: transparent;
@@ -280,12 +304,27 @@ section[id] { scroll-margin-top: 84px; }
 .section-head { max-width: 640px; margin: 0 auto 56px; text-align: center; }
 .section-head.left { margin: 0 0 32px; text-align: left; }
 .section-kicker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   text-transform: uppercase;
   letter-spacing: 0.3em;
   font-size: 12px;
   color: var(--accent-bright);
   margin-bottom: 14px;
 }
+/* Filete editorial a los lados del kicker — el detalle que hace que un section-header se
+   sienta compuesto, no un <h2> centrado con un párrafo debajo. */
+.section-kicker::before, .section-kicker::after {
+  content: "";
+  width: 28px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-dark));
+}
+.section-kicker::after { background: linear-gradient(90deg, var(--accent-dark), transparent); }
+.section-head.left .section-kicker { justify-content: flex-start; }
+.section-head.left .section-kicker::before { display: none; }
+.section-head.left .section-kicker::after { width: 40px; }
 .section-head h2 { font-size: clamp(28px, 4vw, 38px); margin-bottom: 16px; }
 .section-sub { color: var(--ink-dim); font-size: 17px; }
 
@@ -297,6 +336,7 @@ section[id] { scroll-margin-top: 84px; }
   gap: 24px;
 }
 .area-card {
+  position: relative;
   background: var(--bg-card);
   border: 1px solid var(--line);
   border-top: 2px solid var(--accent);
@@ -305,12 +345,27 @@ section[id] { scroll-margin-top: 84px; }
   display: flex;
   flex-direction: column;
   gap: 14px;
-  transition: border-color 0.25s ease, transform 0.25s ease;
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s ease;
 }
+/* Reflejo diagonal sutil que cruza la tarjeta al pasar el cursor — el tipo de detalle que
+   separa "tarjeta con hover" de "tarjeta plana con un borde que cambia de color". */
+.area-card::after {
+  content: "";
+  position: absolute; inset: -40% -20%;
+  background: linear-gradient(115deg, transparent 40%, rgba(228,190,124,0.08) 50%, transparent 60%);
+  transform: translateX(-60%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+.area-card:hover::after { transform: translateX(60%); }
 .area-card:hover {
   border-color: var(--accent);
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(201,161,90,0.15);
 }
+.area-card:hover .area-num { color: var(--accent-bright); }
+.area-num { transition: color 0.3s ease; }
 .area-num {
   font-family: var(--serif);
   font-size: 14px;
@@ -329,13 +384,14 @@ section[id] { scroll-margin-top: 84px; }
   align-items: start;
 }
 .photo-placeholder {
+  position: relative;
   aspect-ratio: 3 / 4;
   width: 100%;
   background:
     linear-gradient(160deg, rgba(201,161,90,0.14), transparent 60%),
     repeating-linear-gradient(45deg, rgba(201,161,90,0.05) 0 2px, transparent 2px 48px),
     var(--bg-card);
-  border: 1px dashed var(--accent-dark);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
@@ -346,6 +402,17 @@ section[id] { scroll-margin-top: 84px; }
   font-size: 13px;
   letter-spacing: 0.05em;
 }
+/* Esquinas de "cédula de museo" en vez de un marco punteado corrido — mismo mensaje
+   ("aquí falta una foto") con más intención de diseño. */
+.photo-placeholder::before, .photo-placeholder::after,
+.photo-placeholder span::before, .photo-placeholder span::after {
+  content: ""; position: absolute; width: 22px; height: 22px;
+  border-color: var(--accent-dark); border-style: solid; border-width: 0;
+}
+.photo-placeholder::before { top: 14px; left: 14px; border-top-width: 1.5px; border-left-width: 1.5px; }
+.photo-placeholder::after { top: 14px; right: 14px; border-top-width: 1.5px; border-right-width: 1.5px; }
+.photo-placeholder span::before { bottom: 14px; left: 14px; top: auto; border-bottom-width: 1.5px; border-left-width: 1.5px; }
+.photo-placeholder span::after { bottom: 14px; right: 14px; top: auto; border-bottom-width: 1.5px; border-right-width: 1.5px; }
 .profile-body p { color: var(--ink-dim); margin-bottom: 18px; }
 .profile-body p:first-of-type { color: var(--ink); font-size: 17px; }
 .credential-list {
@@ -433,6 +500,28 @@ section[id] { scroll-margin-top: 84px; }
 }
 .contact-data li:last-child { border-bottom: none; }
 
+/* ---------- Mapa (embed estándar de Google + filtro CSS de aproximación oscura) ---------- */
+.map-frame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.map-frame iframe {
+  width: 100%; height: 100%; border: 0; display: block;
+  /* Invertir+rotar matiz es el truco conocido para aproximar un mapa oscuro sin API key ni
+     estilos nativos (el embed simple de Google no los admite) — se sacrifica algo de
+     fidelidad de color a cambio de no depender de una clave ni de la API JS completa. */
+  filter: invert(92%) hue-rotate(180deg) brightness(0.94) contrast(0.92) saturate(0.6);
+}
+.map-pendiente {
+  position: absolute; top: 8px; left: 8px; z-index: 1;
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--ink-dim); border: 1px dashed var(--line); border-radius: 999px;
+  padding: 4px 9px; background: rgba(23,19,13,0.75);
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
   border-top: 1px solid var(--line);
@@ -465,6 +554,12 @@ section[id] { scroll-margin-top: 84px; }
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 .reveal.visible { opacity: 1; transform: none; }
+/* Revelado escalonado en grillas — cuatro tarjetas apareciendo a la vez leen como "carga de
+   página"; cuatro apareciendo en cascada leen como intención. 70ms de diferencia por tarjeta,
+   nada que se sienta lento. */
+.areas-grid .area-card.reveal:nth-child(2) { transition-delay: 0.07s; }
+.areas-grid .area-card.reveal:nth-child(3) { transition-delay: 0.14s; }
+.areas-grid .area-card.reveal:nth-child(4) { transition-delay: 0.21s; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -544,6 +639,28 @@ section[id] { scroll-margin-top: 84px; }
   transition: transform 0.2s ease;
 }
 .fw-chat-launcher:hover { transform: scale(1.06); }
+/* Balanza jurídica animada — identidad propia del launcher (ver 3-sep). El brazo+platillos
+   oscila alrededor del pivote (24,12); el poste y la base quedan fijos, como una balanza real. */
+.balanza { overflow: visible; }
+.balanza-finial { fill: var(--accent-bright); }
+.balanza-poste, .balanza-base {
+  stroke: var(--accent-bright); stroke-width: 2; stroke-linecap: round; fill: none;
+}
+.balanza-viga {
+  transform-origin: 24px 12px;
+  animation: balanza-oscilar 3.4s ease-in-out infinite;
+}
+.balanza-viga > line { stroke: var(--accent-bright); stroke-width: 2; stroke-linecap: round; }
+.balanza-platillo line { stroke: var(--accent-bright); stroke-width: 1.5; }
+.balanza-platillo path { fill: none; stroke: var(--accent-bright); stroke-width: 2; stroke-linecap: round; }
+@keyframes balanza-oscilar {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .balanza-viga { animation: none; }
+}
+
 .fw-chat .fw-chat-avatar {
   width: 34px; height: 34px; border-radius: 999px;
   background: var(--accent); color: var(--accent-on);

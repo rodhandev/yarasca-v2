@@ -205,6 +205,25 @@
                 <li><span class="cred-label">Horario:</span> [PENDIENTE: horario de atención]</li>
               </ul>
             </div>
+            <div class="side-block map-block">
+              <h3>Ubicación</h3>
+              <!-- Pin de PRUEBA (Huancayo, Junín) — la ficha del cliente aún no tiene
+                   dirección confirmada (ver zymbiotek-brain/CURRENT/clientes/
+                   yarasca-asociados.md). Sustituir el `q=` del iframe por la dirección real
+                   antes de publicar. El "tema oscuro" es un filtro CSS sobre el embed
+                   estándar de Google (sin API key) — Google no ofrece dark mode en el
+                   iframe simple, así que esto es una aproximación visual, no un estilo
+                   nativo del mapa. -->
+              <div class="map-frame">
+                <span class="map-pendiente">Pin de prueba — confirmar dirección exacta</span>
+                <iframe
+                  title="Ubicación referencial — Huancayo, Junín"
+                  src="https://www.google.com/maps?q=Huancayo,Jun%C3%ADn,Per%C3%BA&z=14&output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+            </div>
           </aside>
         </div>
       </div>
@@ -263,7 +282,26 @@
         <p class="fw-chat-nota">Maqueta de interfaz para la presentación — sin conexión real todavía.</p>
       </div>
       <button type="button" class="fw-chat-launcher" id="fw-chat-launcher" aria-expanded="false" aria-controls="fw-chat-panel">
-        <span class="fw-chat-avatar">Y&amp;A</span>
+        <!-- Balanza jurídica — identidad propia del launcher, no el "Y&A" genérico que
+             lleva el resto del sitio. El brazo+platillos oscila con CSS puro (sin JS,
+             sin librería) y respeta prefers-reduced-motion (ver styles.css). -->
+        <svg class="balanza" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true">
+          <circle class="balanza-finial" cx="24" cy="6" r="2.1"/>
+          <line class="balanza-poste" x1="24" y1="8" x2="24" y2="38"/>
+          <path class="balanza-base" d="M15 40h18M24 38v2"/>
+          <g class="balanza-viga">
+            <line x1="8" y1="12" x2="40" y2="12"/>
+            <line x1="24" y1="10" x2="24" y2="12"/>
+            <g class="balanza-platillo">
+              <line x1="8" y1="12" x2="8" y2="21"/>
+              <path d="M3 21a5 5 0 0 0 10 0Z"/>
+            </g>
+            <g class="balanza-platillo">
+              <line x1="40" y1="12" x2="40" y2="21"/>
+              <path d="M35 21a5 5 0 0 0 10 0Z"/>
+            </g>
+          </g>
+        </svg>
         <span class="sr-only">Abrir chat con el asistente</span>
       </button>
     </div>
