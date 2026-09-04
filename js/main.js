@@ -45,6 +45,29 @@
     reveals.forEach(function (el) { el.classList.add("visible"); });
   }
 
+  /* --- 2.b Widget de chat flotante (maqueta, sin backend) --- */
+  var lanzador = document.getElementById("fw-chat-launcher");
+  var panel = document.getElementById("fw-chat-panel");
+  var cerrar = document.getElementById("fw-chat-cerrar");
+
+  if (lanzador && panel) {
+    var abrirChat = function () {
+      panel.hidden = false;
+      lanzador.setAttribute("aria-expanded", "true");
+    };
+    var cerrarChat = function () {
+      panel.hidden = true;
+      lanzador.setAttribute("aria-expanded", "false");
+    };
+    lanzador.addEventListener("click", function () {
+      if (panel.hidden) { abrirChat(); } else { cerrarChat(); }
+    });
+    if (cerrar) { cerrar.addEventListener("click", cerrarChat); }
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape" && !panel.hidden) { cerrarChat(); lanzador.focus(); }
+    });
+  }
+
   /* --- 3. Formulario (prototipo, sin backend) --- */
   var form = document.getElementById("contact-form");
   var note = document.getElementById("form-note");
