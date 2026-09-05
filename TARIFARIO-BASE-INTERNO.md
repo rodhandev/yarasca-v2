@@ -2,7 +2,7 @@
 
 > **Uso interno.** Cifras base para cotizar proyectos web. No es catálogo público:
 > cada cliente recibe su propia propuesta (Rodhan decide el negocio, AGENTS.md).
-> Creado el 4-sep-2026; primera aplicación real: `PROPUSTA-COTIZACION-YARASCA.md`.
+> Creado el 4-sep-2026; primera aplicación real: `PROPUESTA-COTIZACION-YARASCA.md`.
 > Moneda: Soles (PEN). No incluye IGV.
 
 ## Filosofía de precios
@@ -41,4 +41,4 @@ El precio se fija por **valor entregado y estructura modular**, no por horas fac
 
 | Fecha | Cliente | Propuesta | Base aplicada |
 |---|---|---|---|
-| 4-sep-2026 | Yarasca & Asociados | `PROPUSTA-COTIZACION-YARASCA.md` | S/ 480 + S/ 60/mes + NFC S/ 90 |
+| 4-sep-2026 | Yarasca & Asociados | `PROPUESTA-COTIZACION-YARASCA.md` | S/ 480 + S/ 60/mes + NFC S/ 90 |

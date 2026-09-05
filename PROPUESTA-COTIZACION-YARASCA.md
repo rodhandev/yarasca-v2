@@ -80,8 +80,11 @@ abogado. Ideal para networking, citas y presencia en eventos.
 
 ## Condiciones
 
-- **Plazo de entrega:** [PENDIENTE: confirmar fecha con Rodhan antes de enviar — prototipo ya aprobado visualmente por el cliente].
-- **Forma de pago:** [PENDIENTE: definir con Rodhan — sugerido 50% al aprobar, 50% a la entrega].
+- **Plazo de entrega:** 3 a 5 días hábiles, contados a partir de la recepción de las
+  fotografías oficiales del equipo, semblanzas y videos institucionales por parte del abogado.
+- **Forma de pago:** 50% de adelanto (**S/ 240.00**) para iniciar la carga y el despliegue
+  final, y 50% restante (**S/ 240.00**) contra entrega, con la web publicada en su dominio
+  oficial.
 - **Garantía:** 30 días de correcciones sin costo tras la entrega.
 - Los precios no incluyen IGV. Cotización válida por 30 días.
 
@@ -108,6 +111,8 @@ abogado. Ideal para networking, citas y presencia en eventos.
 > 📇 TARJETA NFC INTELIGENTE (opcional) — S/ 90.00/unidad
 > • Tarjeta física que abre su web o su WhatsApp con solo acercarla a cualquier celular
 >
-> Su sitio ya está desarrollado y cuenta con su aprobación visual: queda listo para publicar. Quedo atento a sus comentarios.
+> Su sitio ya está desarrollado y cuenta con su aprobación visual. Condiciones: entrega en 3 a 5 días hábiles desde la recepción de sus fotografías oficiales, semblanzas y videos; pago en dos partes — 50% de adelanto (S/ 240.00) para iniciar la carga y el despliegue, y 50% restante (S/ 240.00) contra entrega con la web publicada en su dominio oficial.
+>
+> Quedo atento a sus comentarios.
 >
 > Zymbiotek — Desarrollo web asistido por IA

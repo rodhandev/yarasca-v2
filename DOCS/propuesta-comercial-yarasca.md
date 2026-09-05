@@ -2,7 +2,7 @@
 
 > ⛔ **SUPERADO (4-sep-2026):** este borrador queda como referencia histórica de método.
 > La cotización formal vigente, con las cifras aprobadas por Rodhan, está en
-> `../PROPUSTA-COTIZACION-YARASCA.md` (S/ 480 pago único + S/ 60/mes + NFC S/ 90).
+> `../PROPUESTA-COTIZACION-YARASCA.md` (S/ 480 pago único + S/ 60/mes + NFC S/ 90).
 > No usar las cifras de este documento.
 
 > **Estado: BORRADOR para revisión de Rodhan, no una cotización cerrada.** Ningún precio de
