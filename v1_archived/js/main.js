@@ -68,6 +68,23 @@
     });
   }
 
+  /* --- 2.c Modales de equipo (<dialog> nativo) --- */
+  document.querySelectorAll(".team-open").forEach(function (abridor) {
+    var dlg = document.getElementById(abridor.dataset.dialog);
+    if (!dlg) return;
+    abridor.addEventListener("click", function () { dlg.showModal(); });
+  });
+  // Cierre: botón ×, cualquier elemento con data-close (CTA que navega a #contacto)
+  document.querySelectorAll(".team-dialog [data-close]").forEach(function (el) {
+    el.addEventListener("click", function (ev) {
+      // Si el elemento navega (ancla con href), dejar que el navegador
+      // navegue después de cerrar el modal.
+      el.closest("dialog").close();
+      if (ev.target.closest("a[href^='#']")) return; // el ancla sigue su curso
+      ev.preventDefault();
+    });
+  });
+
   /* --- 3. Formulario (prototipo, sin backend) --- */
   var form = document.getElementById("contact-form");
   var note = document.getElementById("form-note");

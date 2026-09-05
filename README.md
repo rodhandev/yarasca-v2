@@ -8,7 +8,28 @@ maquetación**, no contactar al cliente ni publicar nada.
 - Informe del agente: `REPORT_YARASCA_WEB.md` (volátil, no se commitea).
 - Sin remoto: es un prototipo, no un repo de producción.
 
-## 3-sep — repaletizado, misma maquetación
+## Estructura (4-sep-2026)
+
+| Ruta | Estado |
+|---|---|
+| `v2/` | **Versión vigente.** Arquitectura multi-página inspirada en ccfirma.com (La Firma, Servicios, Centro de Conciliación, Equipo, Contacto). Ruta por defecto: abrir la raíz redirige a `v2/index.html`. |
+| `v1_archived/` | Plantilla v1 one-page (charcoal + oro, Playfair Display). Archivada completa y autocontenida para reuso en otros proyectos — ver su README. |
+| `index.html` (raíz) | Solo redirect a `v2/index.html`. |
+| `assets/` | Multimedia de v2: video hero (`10238020-…mp4`), imagen banda (`pexels-…jpg`). |
+| `public/assets/` | Logos SVG oficiales (`logo-yarasca.svg`, `logo-yarasca-navy.svg`). |
+| `doc logo/` | Material fuente del cliente (logo editable, extracción docx). |
+| `reference web/` | Capturas de referencia de arquitectura visual (ccfirma.com). |
+
+### v2 — desarrollo y reconstrucción
+
+- Servir desde la raíz del repo: `python3 -m http.server 3006` → abrir `http://127.0.0.1:3006/`.
+- Las páginas HTML de `v2/` son **generadas**: el fuente vive en `v2/src/` (partials + páginas)
+  y se ensambla con `python3 v2/build.py`. No editar las páginas de `v2/` a mano.
+- Paleta extraída del CSS de ccfirma.com: acento `#ED6A23`, texto `#32373C`, tipografía Montserrat.
+- [PENDIENTE] del cliente declarados en el marcado: fotos reales del equipo, dirección/correo,
+  certificaciones del carrusel, backend del formulario.
+
+## 3-sep — repaletizado, misma maquetación (v1)
 
 Rodhan pidió revisar el estado y "finalizarlo" con `goldmanwolfe.com` como referencia de estilo.
 La maquetación (hero, áreas, perfil, contacto, footer) ya estaba completa desde el 27-ago y no

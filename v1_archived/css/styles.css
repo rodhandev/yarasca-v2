@@ -1,27 +1,25 @@
 /* ============================================================
    Yarasca & Asociados — hoja de estilos del prototipo
-   Rediseño 3-sep: paleta propia del cliente (charcoal + oro), NO la de
-   Zymbiotek. La versión anterior usaba el Blue Ice #00C3E3 — el acento
-   de MARCA de Zymbiotek — como si fuera la identidad de Yarasca. Un
-   sitio de cliente no lleva puesto el color de la agencia que lo hizo.
-   Referencia estructural: goldmanwolfe.com (hero fotográfico de
-   autoridad, tipografía serif de peso, grilla de servicios sobre
-   fondo claro, paleta oro/carbón/crema). Estructura y contenido del
-   prototipo NO cambian — los [PENDIENTE] siguen siendo honestos:
-   datos reales del cliente que no se inventan.
+   Rediseño 4-sep: paleta OFICIAL del cliente, extraida de
+   "YARASCA LOGO EDITABLE FULL WORD.docx" (doc logo/):
+   azul marino #193668 (autoridad/seriedad) + blanco #FFFFFF
+   (transparencia/ética). Logo oficial vectorizado en public/assets/logo-yarasca.svg.
+   Estructura y contenido del prototipo NO cambian — los [PENDIENTE]
+   siguen siendo honestos: datos reales del cliente que no se inventan.
    ============================================================ */
 
 :root {
-  --bg: #17130D;
-  --bg-raise: #1E1912;
-  --bg-card: #1C170F;
-  --ink: #F3EEE4;
-  --ink-dim: #B7AB97;
-  --accent: #C9A15A;
-  --accent-bright: #E4BE7C;
-  --accent-dark: #8F7038;
-  --accent-on: #1A1408;
-  --line: rgba(201, 161, 90, 0.22);
+  --bg: #0B1428;
+  --bg-raise: #142547;
+  --bg-card: #101E3C;
+  --ink: #FFFFFF;
+  --ink-dim: #AAB8CF;
+  --accent: #193668;
+  --accent-bright: #FFFFFF;
+  --accent-dark: #2E5BAB;
+  --accent-ui: #4A6FAF;   /* derivado legible del oficial: bordes/acentos sobre navy */
+  --accent-on: #0B1428;
+  --line: rgba(160, 180, 215, 0.22);
   --serif: "Playfair Display", "Georgia", "Times New Roman", serif;
   --sans: "Inter", "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
   --radius: 4px;
@@ -86,31 +84,31 @@ section[id] { scroll-margin-top: 84px; }
 }
 .btn:hover { text-decoration: none; }
 .btn-primary {
-  background: var(--accent); color: var(--accent-on);
+  background: var(--accent-bright); color: var(--accent-on);
   transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 .btn-primary:hover {
-  background: var(--accent-bright);
+  background: #E6ECF7;
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(201,161,90,0.28);
+  box-shadow: 0 10px 24px rgba(255,255,255,0.28);
 }
 .btn-ghost {
   border-color: var(--line); color: var(--ink);
   transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, background 0.2s ease;
 }
 .btn-ghost:hover {
-  border-color: var(--accent); color: var(--accent-bright);
-  background: rgba(201,161,90,0.06);
+  border-color: var(--accent-ui); color: var(--accent-bright);
+  background: rgba(255,255,255,0.06);
   transform: translateY(-2px);
 }
 .btn-block { display: block; width: 100%; }
 .btn-whatsapp {
   background: transparent;
-  border: 1px solid var(--accent);
+  border: 1px solid var(--accent-ui);
   color: var(--accent-bright);
   display: block;
 }
-.btn-whatsapp:hover { background: rgba(201, 161, 90, 0.08); }
+.btn-whatsapp:hover { background: rgba(255, 255, 255, 0.08); }
 .btn-whatsapp small { font-weight: 400; font-size: 12px; letter-spacing: normal; text-transform: none; opacity: 0.75; }
 
 /* ---------- Cabecera ---------- */
@@ -118,7 +116,7 @@ section[id] { scroll-margin-top: 84px; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(23, 19, 13, 0.94);
+  background: rgba(11,20,40, 0.94);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
@@ -172,11 +170,11 @@ section[id] { scroll-margin-top: 84px; }
 .main-nav a:hover { color: var(--accent-bright); text-decoration: none; }
 .main-nav .nav-cta {
   color: var(--accent-bright);
-  border: 1px solid var(--accent);
+  border: 1px solid rgba(255,255,255,0.55);
   padding: 9px 18px;
   border-radius: var(--radius);
 }
-.main-nav .nav-cta:hover { background: rgba(201, 161, 90, 0.1); }
+.main-nav .nav-cta:hover { background: rgba(255, 255, 255, 0.1); }
 
 .nav-toggle {
   display: none;
@@ -235,7 +233,7 @@ section[id] { scroll-margin-top: 84px; }
      vídeo por completo arriba. Ya no lleva la textura de líneas de la versión sin vídeo: una
      textura geométrica encima de metraje real se ve como un defecto, no como diseño. */
   background-image:
-    linear-gradient(180deg, rgba(23,19,13,0.55) 0%, rgba(23,19,13,0.72) 55%, rgba(23,19,13,0.90) 100%);
+    linear-gradient(180deg, rgba(11,20,40,0.55) 0%, rgba(11,20,40,0.72) 55%, rgba(11,20,40,0.90) 100%);
   pointer-events: none;
 }
 .hero-placeholder-tag {
@@ -249,7 +247,7 @@ section[id] { scroll-margin-top: 84px; }
   border: 1px dashed var(--line);
   border-radius: var(--radius);
   padding: 5px 10px;
-  background: rgba(23,19,13,0.6);
+  background: rgba(11,20,40,0.6);
 }
 .hero-inner { position: relative; z-index: 2; max-width: 820px; }
 .hero-kicker {
@@ -295,7 +293,7 @@ section[id] { scroll-margin-top: 84px; }
   content: "";
   width: 4px; height: 4px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--accent-ui);
   margin: 0 16px;
 }
 
@@ -337,9 +335,15 @@ section[id] { scroll-margin-top: 84px; }
 }
 .area-card {
   position: relative;
-  background: var(--bg-card);
+  background:
+    /* veta sutil tipo mármol blanco — CSS puro: el docx NO contiene ninguna imagen de
+       mármol (image5.png es un duplicado del logo, no existe image5.jpeg), asi que la
+       textura se sintetiza con degradados en blanco al 3-4% para no inventar un asset. */
+    linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.035) 38%, transparent 46%),
+    linear-gradient(65deg, transparent 55%, rgba(255,255,255,0.03) 62%, transparent 70%),
+    var(--bg-card);
   border: 1px solid var(--line);
-  border-top: 2px solid var(--accent);
+  border-top: 2px solid var(--accent-ui);
   border-radius: var(--radius);
   padding: 36px 28px;
   display: flex;
@@ -353,16 +357,16 @@ section[id] { scroll-margin-top: 84px; }
 .area-card::after {
   content: "";
   position: absolute; inset: -40% -20%;
-  background: linear-gradient(115deg, transparent 40%, rgba(228,190,124,0.08) 50%, transparent 60%);
+  background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.08) 50%, transparent 60%);
   transform: translateX(-60%);
   transition: transform 0.6s ease;
   pointer-events: none;
 }
 .area-card:hover::after { transform: translateX(60%); }
 .area-card:hover {
-  border-color: var(--accent);
+  border-color: var(--accent-ui);
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(201,161,90,0.15);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.15);
 }
 .area-card:hover .area-num { color: var(--accent-bright); }
 .area-num { transition: color 0.3s ease; }
@@ -388,8 +392,8 @@ section[id] { scroll-margin-top: 84px; }
   aspect-ratio: 3 / 4;
   width: 100%;
   background:
-    linear-gradient(160deg, rgba(201,161,90,0.14), transparent 60%),
-    repeating-linear-gradient(45deg, rgba(201,161,90,0.05) 0 2px, transparent 2px 48px),
+    linear-gradient(160deg, rgba(255,255,255,0.14), transparent 60%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0 2px, transparent 2px 48px),
     var(--bg-card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -407,7 +411,7 @@ section[id] { scroll-margin-top: 84px; }
 .photo-placeholder::before, .photo-placeholder::after,
 .photo-placeholder span::before, .photo-placeholder span::after {
   content: ""; position: absolute; width: 22px; height: 22px;
-  border-color: var(--accent-dark); border-style: solid; border-width: 0;
+  border-color: var(--accent-ui); border-style: solid; border-width: 0;
 }
 .photo-placeholder::before { top: 14px; left: 14px; border-top-width: 1.5px; border-left-width: 1.5px; }
 .photo-placeholder::after { top: 14px; right: 14px; border-top-width: 1.5px; border-right-width: 1.5px; }
@@ -474,8 +478,8 @@ section[id] { scroll-margin-top: 84px; }
 .field select:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(201, 161, 90, 0.18);
+  border-color: var(--accent-ui);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.18);
 }
 .field textarea { resize: vertical; }
 .form-note { font-size: 13px; color: var(--ink-dim); text-align: center; }
@@ -498,7 +502,19 @@ section[id] { scroll-margin-top: 84px; }
   color: var(--ink-dim);
   font-size: 15px;
 }
-.contact-data li:last-child { border-bottom: none; }
+
+/* ---------- Logo oficial vectorizado (public/assets/logo-yarasca.svg) ----------
+   Lockup HORIZONTAL (columna-Y + textos), viewBox recortado 516x201.
+   5-sep v2: altura 48→68px — legible a simple vista en desktop (100-110% zoom).
+   El nav-wrap mide 76px fijos: 68px dejan 4px de aire arriba y abajo, sin desbordar. */
+.brand-logo {
+  display: block;
+  height: 68px;
+  width: auto;
+  max-height: 68px;
+}
+.site-footer .brand-logo { height: 44px; max-height: 44px; }
+@media (max-width: 760px) { .brand-logo { height: 46px; max-height: 46px; } }
 
 /* ---------- Mapa (embed estándar de Google + filtro CSS de aproximación oscura) ---------- */
 .map-frame {
@@ -604,6 +620,246 @@ section[id] { scroll-margin-top: 84px; }
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ============================================================
+   Rediseño 4-sep v3 — nueva arquitectura tipo boutique legal
+   (referencia ccfirma.com): se añaden secciones Nuestra Firma,
+   Centro de Conciliación y Equipo (con modales <dialog>).
+   Los estilos existentes (hero/áreas/contacto/widgets/balanza)
+   NO se tocan.
+   ============================================================ */
+
+/* ---------- Nuestra Firma ---------- */
+.firm-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.firm-body p { color: var(--ink-dim); margin-bottom: 18px; }
+.firm-body p:first-of-type { color: var(--ink); font-size: 17px; }
+.firm-values {
+  list-style: none;
+  margin-top: 28px;
+  display: grid;
+  gap: 18px;
+}
+.firm-values li {
+  border-left: 2px solid var(--accent-ui);
+  padding: 2px 0 2px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.firm-values strong {
+  font-family: var(--serif);
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+.firm-values span { color: var(--ink-dim); font-size: 14.5px; }
+.firm-photo {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.firm-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.firm-photo figcaption {
+  position: absolute; left: 10px; bottom: 10px;
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--ink-dim); border: 1px dashed var(--line); border-radius: 999px;
+  padding: 4px 9px; background: rgba(11,20,40,0.75);
+}
+
+/* ---------- Centro de Conciliación ---------- */
+.concilia { background: var(--bg-raise); border-block: 1px solid var(--line); }
+.cc-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.cc-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.3s ease, transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s ease;
+}
+.cc-card:hover {
+  border-color: var(--accent-ui);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.35);
+}
+.cc-icon {
+  font-size: 26px;
+  line-height: 1;
+  color: var(--accent-bright);
+}
+.cc-card h3 { font-size: 19px; }
+.cc-card p { color: var(--ink-dim); font-size: 15px; }
+.cc-advantages {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 44px 40px;
+}
+.cc-adv-title {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 28px;
+}
+.cc-adv-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+}
+.cc-adv-grid li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 2px solid var(--accent-ui);
+  padding-top: 16px;
+}
+.cc-adv-grid strong {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--ink);
+}
+.cc-adv-grid span { color: var(--ink-dim); font-size: 14.5px; }
+.cc-cta { text-align: center; margin-top: 36px; }
+
+/* ---------- Equipo y asociados ---------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+}
+.team-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s ease;
+}
+.team-card:hover {
+  border-color: var(--accent-ui);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.35);
+}
+.team-open {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+}
+.team-photo-wrap {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.team-photo-wrap img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  filter: saturate(0.92);
+  transition: transform 0.5s ease;
+}
+.team-card:hover .team-photo-wrap img { transform: scale(1.04); }
+.team-sample-tag {
+  position: absolute; left: 10px; top: 10px;
+  font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--ink-dim); border: 1px dashed var(--line); border-radius: 999px;
+  padding: 3px 8px; background: rgba(11,20,40,0.75);
+}
+.team-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 18px 18px 22px;
+}
+.team-meta strong { font-family: var(--serif); font-size: 17px; line-height: 1.25; }
+.team-meta em {
+  font-style: normal;
+  color: var(--ink-dim);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ---------- Modales de equipo (<dialog> nativo) ---------- */
+.team-dialog {
+  width: min(860px, calc(100vw - 32px));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  color: var(--ink);
+  padding: 0;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.55);
+}
+.team-dialog::backdrop {
+  background: rgba(5, 10, 22, 0.78);
+  backdrop-filter: blur(3px);
+}
+.dialog-close {
+  position: absolute;
+  top: 12px; right: 14px;
+  background: none;
+  border: none;
+  color: var(--ink-dim);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  z-index: 2;
+}
+.dialog-close:hover { color: var(--accent-bright); }
+.dialog-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
+.dialog-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.dialog-body { padding: 36px 36px 40px; }
+.dialog-kicker { justify-content: flex-start; margin-bottom: 10px; }
+.dialog-kicker::before { display: none; }
+.dialog-body h3 { font-size: 26px; margin-bottom: 16px; }
+.dialog-body p { color: var(--ink-dim); font-size: 15px; margin-bottom: 14px; }
+.dialog-body .credential-list { margin-top: 18px; }
+.dialog-cta { margin-top: 22px; }
+@media (max-width: 700px) {
+  .dialog-grid { grid-template-columns: 1fr; }
+  .dialog-photo { aspect-ratio: 16 / 9; }
+}
+
+/* ---------- Responsive: nuevas secciones ---------- */
+@media (max-width: 900px) {
+  .firm-grid { grid-template-columns: 1fr; gap: 40px; }
+  .firm-photo img { aspect-ratio: 16 / 10; }
+}
+@media (max-width: 760px) {
+  .cc-advantages { padding: 32px 22px; }
 }
 
 /* ---------- Widgets flotantes (demo) ---------- */

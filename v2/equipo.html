@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipo y Asociados — Yarasca &amp; Asociados</title>
+  <meta name="description" content="Equipo y asociados de Yarasca & Asociados: abogados y conciliadores con autoridad jurídica y trato directo.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/v2.css">
+</head>
+<body>
+
+  <!-- Announcement bar (patrón ccfirma) -->
+  <div class="announce" id="announce" role="note">
+    <strong>Centro de Conciliación Extrajudicial</strong> — resuelva su conflicto sin litigar.
+    <a href="centro-de-conciliacion.html">Conozca cómo</a>
+    <button type="button" class="announce-close" id="announce-close" aria-label="Cerrar aviso">×</button>
+  </div>
+
+  <!-- Header semitransparente con blur -->
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="Yarasca y Asociados — inicio">
+        <img src="../public/assets/logo-yarasca.svg" alt="Yarasca &amp; Asociados — Abogados" class="brand-logo">
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="la-firma.html" >La Firma</a></li>
+          <li>
+            <button type="button" class="dd-label" aria-haspopup="true">Servicios <span class="dd-caret" aria-hidden="true">▼</span></button>
+            <ul class="dropdown">
+              <li><a href="servicios.html">Todos los servicios</a></li>
+              <li><a href="servicios.html#penal">Derecho Penal</a></li>
+              <li><a href="servicios.html#civil">Derecho Civil y Contratos</a></li>
+              <li><a href="servicios.html#corporativo">Corporativo y Empresarial</a></li>
+            </ul>
+          </li>
+          <li><a href="centro-de-conciliacion.html" >Centro de Conciliación</a></li>
+          <li><a href="equipo.html" class="nav-active">Equipo</a></li>
+        </ul>
+        <a href="contacto.html" class="nav-cta">¿Hablamos?</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+<section class="page-hero">
+      <div class="container">
+        <span class="crumb"><a href="index.html">Inicio</a> / Equipo</span>
+        <h1>Equipo y Asociados</h1>
+        <p>Las personas detrás de cada caso. Toque una tarjeta para ver el perfil profesional.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="team-grid">
+          <!-- FOTOS: placeholders de Unsplash hasta que el cliente envíe
+               las fotografías definitivas. -->
+          <article class="team-card reveal">
+            <button type="button" class="team-open" data-dialog="dlg-eduardo" aria-haspopup="dialog">
+              <span class="team-photo-wrap">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=80"
+                     alt="Foto de muestra — Eduardo Yarasca Román" loading="lazy">
+                <span class="team-sample-tag">Foto de muestra</span>
+              </span>
+              <span class="team-meta">
+                <strong>Eduardo Yarasca Román</strong>
+                <em>Fundador · Abogado y Conciliador</em>
+              </span>
+            </button>
+          </article>
+          <article class="team-card reveal">
+            <button type="button" class="team-open" data-dialog="dlg-asoc1" aria-haspopup="dialog">
+              <span class="team-photo-wrap">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80"
+                     alt="Foto de muestra — asociada" loading="lazy">
+                <span class="team-sample-tag">Foto de muestra</span>
+              </span>
+              <span class="team-meta">
+                <strong>[POR CONFIRMAR: Nombre de asociado/a]</strong>
+                <em>[Área de especialidad]</em>
+              </span>
+            </button>
+          </article>
+          <article class="team-card reveal">
+            <button type="button" class="team-open" data-dialog="dlg-asoc2" aria-haspopup="dialog">
+              <span class="team-photo-wrap">
+                <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=700&q=80"
+                     alt="Foto de muestra — asociado" loading="lazy">
+                <span class="team-sample-tag">Foto de muestra</span>
+              </span>
+              <span class="team-meta">
+                <strong>[POR CONFIRMAR: Nombre de asociado/a]</strong>
+                <em>[Área de especialidad]</em>
+              </span>
+            </button>
+          </article>
+          <article class="team-card reveal">
+            <button type="button" class="team-open" data-dialog="dlg-asoc3" aria-haspopup="dialog">
+              <span class="team-photo-wrap">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=700&q=80"
+                     alt="Foto de muestra — asociado" loading="lazy">
+                <span class="team-sample-tag">Foto de muestra</span>
+              </span>
+              <span class="team-meta">
+                <strong>[POR CONFIRMAR: Nombre de asociado/a]</strong>
+                <em>[Área de especialidad]</em>
+              </span>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modales de equipo -->
+    <dialog class="team-dialog" id="dlg-eduardo" aria-labelledby="dlg-eduardo-t">
+      <button type="button" class="dialog-close" data-close aria-label="Cerrar perfil">×</button>
+      <div class="dialog-grid">
+        <img class="dialog-photo"
+             src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80"
+             alt="Foto de muestra — Eduardo Yarasca Román" loading="lazy">
+        <div class="dialog-body">
+          <p class="section-kicker dialog-kicker">Fundador · Abogado y Conciliador</p>
+          <h3 id="dlg-eduardo-t">Eduardo Yarasca Román</h3>
+          <p>
+            Abogado y conciliador, fundador de Yarasca &amp; Asociados. Su práctica
+            combina la firmeza en la defensa de los intereses de sus clientes con
+            la búsqueda de soluciones eficientes, incluida la vía conciliadora
+            cuando esta ofrece el mejor camino para resolver un conflicto.
+          </p>
+          <p>[PENDIENTE: semblanza profesional completa — trayectoria académica,
+          universidad, especialización y experiencia, con datos verificados por el titular.]</p>
+          <ul class="credential-list value-list" style="margin-top:18px">
+            <li><strong>Colegiatura</strong><span>[PENDIENTE]</span></li>
+            <li><strong>Formación</strong><span>[PENDIENTE]</span></li>
+            <li><strong>Especialidad</strong><span>[PENDIENTE]</span></li>
+          </ul>
+          <a href="contacto.html" class="btn btn-accent dialog-cta" data-close>Consultar con este profesional</a>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="team-dialog" id="dlg-asoc1" aria-labelledby="dlg-asoc1-t">
+      <button type="button" class="dialog-close" data-close aria-label="Cerrar perfil">×</button>
+      <div class="dialog-grid">
+        <img class="dialog-photo"
+             src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80"
+             alt="Foto de muestra — asociada" loading="lazy">
+        <div class="dialog-body">
+          <p class="section-kicker dialog-kicker">Asociada</p>
+          <h3 id="dlg-asoc1-t">[POR CONFIRMAR: Nombre]</h3>
+          <p>[PENDIENTE: perfil profesional — formación, especialidad y áreas de práctica. El cliente enviará datos y foto definitiva.]</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="team-dialog" id="dlg-asoc2" aria-labelledby="dlg-asoc2-t">
+      <button type="button" class="dialog-close" data-close aria-label="Cerrar perfil">×</button>
+      <div class="dialog-grid">
+        <img class="dialog-photo"
+             src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=600&q=80"
+             alt="Foto de muestra — asociado" loading="lazy">
+        <div class="dialog-body">
+          <p class="section-kicker dialog-kicker">Asociado</p>
+          <h3 id="dlg-asoc2-t">[POR CONFIRMAR: Nombre]</h3>
+          <p>[PENDIENTE: perfil profesional — formación, especialidad y áreas de práctica. El cliente enviará datos y foto definitiva.]</p>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="team-dialog" id="dlg-asoc3" aria-labelledby="dlg-asoc3-t">
+      <button type="button" class="dialog-close" data-close aria-label="Cerrar perfil">×</button>
+      <div class="dialog-grid">
+        <img class="dialog-photo"
+             src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80"
+             alt="Foto de muestra — asociado" loading="lazy">
+        <div class="dialog-body">
+          <p class="section-kicker dialog-kicker">Asociado</p>
+          <h3 id="dlg-asoc3-t">[POR CONFIRMAR: Nombre]</h3>
+          <p>[PENDIENTE: perfil profesional — formación, especialidad y áreas de práctica. El cliente enviará datos y foto definitiva.]</p>
+        </div>
+      </div>
+    </dialog>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div class="footer-brand">
+        <img src="../public/assets/logo-yarasca.svg" alt="Yarasca &amp; Asociados — Abogados" class="brand-logo">
+      </div>
+      <nav class="footer-nav" aria-label="Navegación de pie de página">
+        <a href="la-firma.html">La Firma</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="centro-de-conciliacion.html">Centro de Conciliación</a>
+        <a href="equipo.html">Equipo</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <p class="footer-contact">Teléfono y WhatsApp: <a href="https://wa.me/51928407703" target="_blank" rel="noopener">+51 928 407 703</a></p>
+      <p class="footer-legal">
+        © 2026 Yarasca &amp; Asociados. Todos los derechos reservados.
+        [PENDIENTE: aviso legal / política de privacidad]
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============ Widgets flotantes — conservados de v1 ============
+       WhatsApp apunta al número oficial (+51 928 407 703).
+       El chat necesita un bot-id registrado: todavía no existe para
+       este prototipo, se declara como demo en el propio marcado. -->
+  <div class="floating-widgets">
+    <a class="fw-whatsapp"
+       href="https://wa.me/51928407703?text=Buenos%20d%C3%ADas%2C%20quisiera%20agendar%20una%20consulta%20con%20Yarasca%20%26%20Asociados."
+       target="_blank" rel="noopener"
+       aria-label="Escribir por WhatsApp al +51 928 407 703" title="WhatsApp: +51 928 407 703">
+      <svg viewBox="0 0 32 32" aria-hidden="true" width="26" height="26">
+        <path fill="currentColor" d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.2.6 4.3 1.7 6.15L4 29l8.02-1.66c1.78.97 3.8 1.48 5.98 1.48h.02c6.62 0 12.02-5.4 12.02-12.02C30 8.4 24.64 3 16.02 3Zm0 22.02h-.02c-1.9 0-3.76-.5-5.4-1.46l-.39-.23-4.76.99.99-4.66-.25-.4a10.02 10.02 0 0 1-1.55-5.24C4.64 9.5 9.6 4.98 16.02 4.98c2.68 0 5.2 1.05 7.1 2.94a9.96 9.96 0 0 1 2.94 7.1c0 5.52-4.5 10-10.04 10Zm5.48-7.5c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.35.2 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
+      </svg>
+    </a>
+
+    <div class="fw-chat" id="fw-chat">
+      <div class="fw-chat-panel" id="fw-chat-panel" hidden>
+        <div class="fw-chat-head">
+          <span class="fw-chat-avatar">Y&amp;A</span>
+          <div class="fw-chat-head-texto">
+            <strong>Asistente Yarasca &amp; Asociados</strong>
+            <small>Vista previa de interfaz</small>
+          </div>
+          <button type="button" class="fw-chat-cerrar" id="fw-chat-cerrar" aria-label="Cerrar chat">×</button>
+        </div>
+        <div class="fw-chat-body">
+          <p class="fw-chat-msg">Hola 👋 Soy el asistente de Yarasca &amp; Asociados. ¿En qué puedo ayudarte hoy?</p>
+        </div>
+        <div class="fw-chat-foot">
+          <input type="text" placeholder="Escribe tu consulta… (demo)" disabled aria-label="Mensaje — demo, sin envío real">
+          <button type="button" disabled aria-label="Enviar — demo, sin envío real">➤</button>
+        </div>
+        <p class="fw-chat-nota">Maqueta de interfaz para la presentación — sin conexión real todavía.</p>
+      </div>
+      <button type="button" class="fw-chat-launcher" id="fw-chat-launcher" aria-expanded="false" aria-controls="fw-chat-panel">
+        <!-- Balanza jurídica — identidad propia del launcher (v1). Oscila con CSS puro
+             y respeta prefers-reduced-motion. -->
+        <svg class="balanza" viewBox="0 0 48 48" width="30" height="30" aria-hidden="true">
+          <circle class="balanza-finial" cx="24" cy="6" r="2.1"/>
+          <line class="balanza-poste" x1="24" y1="8" x2="24" y2="38"/>
+          <path class="balanza-base" d="M15 40h18M24 38v2"/>
+          <g class="balanza-viga">
+            <line x1="8" y1="12" x2="40" y2="12"/>
+            <line x1="24" y1="10" x2="24" y2="12"/>
+            <g class="balanza-platillo">
+              <line x1="8" y1="12" x2="8" y2="21"/>
+              <path d="M3 21a5 5 0 0 0 10 0Z"/>
+            </g>
+            <g class="balanza-platillo">
+              <line x1="40" y1="12" x2="40" y2="21"/>
+              <path d="M35 21a5 5 0 0 0 10 0Z"/>
+            </g>
+          </g>
+        </svg>
+        <span class="sr-only">Abrir chat con el asistente</span>
+      </button>
+    </div>
+  </div>
+
+
+  <script src="js/main-v2.js"></script>
+</body>
+</html>

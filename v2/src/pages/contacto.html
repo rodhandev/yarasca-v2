@@ -1,0 +1,89 @@
+<!-- META title: Contacto | desc: Contacte a Yarasca & Asociados: teléfono y WhatsApp +51 928 407 703, formulario de consulta y ubicación en Huancayo. -->
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="crumb"><a href="index.html">Inicio</a> / Contacto</span>
+        <h1>¿Hablamos?</h1>
+        <p>Cuéntenos su caso. Le responderemos para coordinar una consulta.</p>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="contact-grid">
+          <form class="contact-form reveal" id="contact-form" action="#" method="post">
+            <!-- Prototipo: sin backend todavía -->
+            <div class="field">
+              <label for="f-nombre">Nombre completo</label>
+              <input type="text" id="f-nombre" name="nombre" autocomplete="name" required>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-email">Correo electrónico</label>
+                <input type="email" id="f-email" name="email" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="f-telefono">Teléfono</label>
+                <input type="tel" id="f-telefono" name="telefono" autocomplete="tel">
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-area">Área de consulta</label>
+              <select id="f-area" name="area">
+                <option value="">Seleccione un área…</option>
+                <option>Derecho Penal</option>
+                <option>Derecho Civil y Contratos</option>
+                <option>Corporativo y Empresarial</option>
+                <option>Conciliación Extrajudicial</option>
+                <option>Otro / No estoy seguro</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-mensaje">¿En qué podemos ayudarle?</label>
+              <textarea id="f-mensaje" name="mensaje" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-accent btn-block">Enviar consulta</button>
+            <p class="form-note" id="form-note" role="status">
+              [PENDIENTE: conectar formulario a backend/correo real — este prototipo aún no envía mensajes]
+            </p>
+          </form>
+
+          <aside class="contact-side reveal">
+            <div class="side-block">
+              <h3>WhatsApp directo</h3>
+              <p>Escríbanos por WhatsApp para una atención rápida.</p>
+              <a class="btn btn-whatsapp"
+                 href="https://wa.me/51928407703?text=Buenos%20d%C3%ADas%2C%20quisiera%20agendar%20una%20consulta%20con%20Yarasca%20%26%20Asociados."
+                 target="_blank" rel="noopener">
+                Abrir conversación de WhatsApp<br>
+                <small>+51 928 407 703</small>
+              </a>
+            </div>
+            <div class="side-block">
+              <h3>Datos de contacto</h3>
+              <ul class="contact-data">
+                <li><span class="cred-label">Teléfono:</span> +51 928 407 703</li>
+                <li><span class="cred-label">Correo:</span> [PENDIENTE: correo electrónico]</li>
+                <li><span class="cred-label">Oficina:</span> [PENDIENTE: dirección de la oficina]</li>
+                <li><span class="cred-label">Horario:</span> [PENDIENTE: horario de atención]</li>
+              </ul>
+            </div>
+            <div class="side-block map-block">
+              <h3>Ubicación</h3>
+              <!-- Pin de PRUEBA (Huancayo, Junín) — dirección aún sin confirmar
+                   en la ficha del cliente. Sustituir el `q=` del iframe por la
+                   dirección real antes de publicar. -->
+              <div class="map-frame">
+                <span class="map-pendiente">Pin de prueba — confirmar dirección exacta</span>
+                <iframe
+                  title="Ubicación referencial — Huancayo, Junín"
+                  src="https://www.google.com/maps?q=Huancayo,Jun%C3%ADn,Per%C3%BA&z=14&output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
