@@ -95,7 +95,7 @@ img { max-width: 100%; }
   gap: 24px;
 }
 .brand { display: flex; align-items: center; flex-shrink: 0; }
-.brand-logo { display: block; height: 58px; width: auto; max-height: 58px; }
+.brand-logo { display: block; height: 68px; width: auto; max-height: 68px; }
 
 .main-nav { display: flex; align-items: center; gap: 26px; }
 .main-nav > ul { display: flex; align-items: center; gap: 26px; list-style: none; }
@@ -627,7 +627,7 @@ img { max-width: 100%; }
   .field-row { grid-template-columns: 1fr; }
   .contact-form { padding: 30px 22px; }
   .cc-advantages { padding: 34px 22px; }
-  .brand-logo { height: 44px; }
+  .brand-logo { height: 48px; max-height: 48px; }
 }
 
 .sr-only {
